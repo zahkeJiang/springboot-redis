@@ -23,6 +23,7 @@ public class Env {
     public static final String CLIENT_KEY = "client";
     public static final String USER_KEY = "user_key";
     public static final String X_CLIENT_TOKEN = "X-Client-Token";
+    public static final String IP = "IP";
 
     public Long getSessionExpire() {
         return sessionExpire;

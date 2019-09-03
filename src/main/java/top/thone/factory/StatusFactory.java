@@ -30,4 +30,8 @@ public enum StatusFactory {
         return new Status(status, null, notice, msg);
     }
 
+    public Status error(Object msg) {
+        return new Status(status, null, this.msg, msg);
+    }
+
 }

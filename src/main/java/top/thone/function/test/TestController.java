@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import top.thone.annotation.ExcludeInterceptor;
 import top.thone.entity.Status;
+import top.thone.factory.StatusFactory;
 
 /**
  * @Author thone
@@ -17,6 +19,7 @@ public class TestController {
 
     @ResponseBody
     @GetMapping("/hello")
+    @ExcludeInterceptor
     public Status hello() throws Exception {
 
         throw new Exception("出现一个异常");

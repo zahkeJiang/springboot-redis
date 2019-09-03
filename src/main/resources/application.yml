@@ -10,3 +10,7 @@ spring:
         max-idle: 10
         min-idle: 0
         max-wait: 30000ms
+logging:
+  file: ${env-config.project}.log
+env-config:
+  project: spring-redis

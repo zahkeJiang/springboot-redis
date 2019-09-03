@@ -16,6 +16,7 @@ import top.thone.Env;
 import top.thone.annotation.ExcludeInterceptor;
 import top.thone.factory.WebSessionFactory;
 import top.thone.util.CodeUtil;
+import top.thone.util.HttpUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -106,7 +107,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
             }
             request.getSession().setAttribute(Env.USER_KEY, userId);
             request.getSession().setAttribute(Env.CLIENT_KEY, client);
-//            request.getSession().setAttribute(Env.IP, HttpUtil.getIpAddress(request));
+            request.getSession().setAttribute(Env.IP, HttpUtil.getIpAddress(request));
             return pass;
         }
     }
