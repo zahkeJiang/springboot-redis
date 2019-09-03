@@ -3,6 +3,7 @@ package top.thone;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.ApplicationPidFileWriter;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @Author thone
@@ -10,6 +11,7 @@ import org.springframework.boot.context.ApplicationPidFileWriter;
  * @Date 4:41 PM-2019/8/31
  **/
 @SpringBootApplication
+@EnableScheduling
 public class BootApplication {
 
     public static void main(String[] args) {
