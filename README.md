@@ -1,5 +1,5 @@
 # springboot-redis
-开始一个springboot项目,包含redis session.
+开始一个springboot项目,包含redis session.用户快速开发一个后端项目.
 
 ## 项目目录结构
 ```
