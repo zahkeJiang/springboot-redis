@@ -20,8 +20,7 @@ public class TestController {
     @ResponseBody
     @GetMapping("/hello")
     @ExcludeInterceptor
-    public Status hello() throws Exception {
-
-        throw new Exception("出现一个异常");
+    public Status hello() {
+        return StatusFactory.S_0_OK.report("hello spring boot");
     }
 }

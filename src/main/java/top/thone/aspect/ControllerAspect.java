@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import top.thone.Env;
+import top.thone.util.Env;
 import top.thone.entity.Log;
 import top.thone.factory.StatusFactory;
 import top.thone.util.CodeUtil;

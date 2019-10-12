@@ -12,7 +12,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import top.thone.Env;
+import top.thone.util.Env;
 import top.thone.annotation.ExcludeInterceptor;
 import top.thone.factory.WebSessionFactory;
 import top.thone.util.CodeUtil;
@@ -76,7 +76,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
             ExcludeInterceptor excludeInterceptor = handlerMethod.getMethodAnnotation(ExcludeInterceptor.class);
             boolean pass = true;
             if(excludeInterceptor==null || !excludeInterceptor.value()) {//没有加入白名单
-                if(request.getHeader(Env.SESSION_KEY)!=null && !request.getHeader(Env.SESSION_KEY).contains(String.valueOf(request.getHeader(Env.X_CLIENT_TOKEN)))){
+                if(request.getHeader(Env.SESSION_KEY)!=null && !request.getHeader(Env.SESSION_KEY).contains(String.valueOf(request.getHeader(Env.X_CLIENT)))){
                     response.setStatus(401);
                     response.sendError(401, "跨端无权访问");
                     return false;
@@ -102,8 +102,8 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
                 return false;
             }
             String client = "dayu:other";
-            if (request.getHeader(Env.X_CLIENT_TOKEN) != null) {
-                client = request.getHeader(Env.X_CLIENT_TOKEN);
+            if (request.getHeader(Env.X_CLIENT) != null) {
+                client = request.getHeader(Env.X_CLIENT);
             }
             request.getSession().setAttribute(Env.USER_KEY, userId);
             request.getSession().setAttribute(Env.CLIENT_KEY, client);

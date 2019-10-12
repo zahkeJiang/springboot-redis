@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
-import top.thone.Env;
+import top.thone.util.Env;
 import top.thone.factory.WebSessionFactory;
 import top.thone.util.CodeUtil;
 
